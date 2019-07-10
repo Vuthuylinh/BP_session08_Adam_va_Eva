@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AdamvaEva</title>
+</head>
+<body>
+<script>
+    var Apple = function (weight) {
+        this.weight = weight;
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.decreaseWeight = function () {
+            this.weight--;
+        };
+        this.isEmpty = function () {
+            if (this.weight === 0) {
+                return true
+            }
+        }
+    };
+    var Human = function (name, gender, humanWeight,) {
+        this.name = name;
+        this.gender = gender;
+        this.humanWeight = humanWeight;
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getGender = function () {
+        return this.gender;
+        };
+        this.getWeight=function () {
+            return this.weight;
+
+        };
+        this.setWeight=function (weight) {
+            this.weight=weight;
+
+        };
+
+        this.saySomething = function () {
+            alert("Do you want to eat apple?")
+        };
+        this.eatApple = function (apple) {
+            if (apple.isEmpty()) {
+                alert("tao  da het");
+            } else {
+                apple.decreaseWeight();
+                humanWeight++;
+            }
+        };
+        this.checkAppleWeight = function (apple) {
+            if (apple.isEmpty()) {
+                alert("No more apple")
+            } else {
+                alert("You can eat apple")
+            }
+        }
+
+    };
+
+    let apple= new Apple(10);
+    let Adam= new Human("Adam","male",70 );
+    let Eva= new Human("Eva","Female", 50);
+    Adam.checkAppleWeight(apple);
+    Adam.eatApple(apple);
+    alert("Khoi luong tao con lai sau khi Adam an: "+apple.getWeight());
+    Eva.eatApple(apple);
+    alert("Khoi luong tao con lai sau khi Eva an: "+ apple.getWeight())
+
+    Eva.checkAppleWeight(apple);
+</script>
+</body>
+</html>
